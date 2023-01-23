@@ -85,7 +85,7 @@ let married = true;
 match (kids, married) {
     (kids, married) if married == false && kids > 0 => println!("Not married with {} kids.", kids),
     (kids, married) if kids == 0 && married == true => println!("Married and no children."),
-    _ println!("Married? {}. Number of kids {}.", married, kids),
+    _ => println!("Married? {}. Number of kids {}.", married, kids),
 }
 ```
 
@@ -159,9 +159,9 @@ fn match_num(input: 132) {
 }
 
 fn main() {
-    match_num(50)
-    match_num(13)
-    match_num(4)
+    match_num(50);
+    match_num(13);
+    match_num(4);
 }
 ```
 
