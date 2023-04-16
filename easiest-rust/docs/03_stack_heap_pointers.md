@@ -1,12 +1,12 @@
 # Stack, Heap, & Pointers
 
-The stack and heap are place where memory is stored.
+The stack and heap are places where memory is stored.
 
 - **Stack** is very fast, a lot faster than the **heap**.
 - Rust need to know the size of a variable at compile time. Simple variables like `i32` go on the stack, since exact size is known. `i32` is 4 bytes
-- Some type don't know the size on compile. First the data goes on the **heap** since it can have any size. Then to find it a **pointer** goes on the **stack**. 
+- Some type have an unknown size at compile. First the data goes on the **heap** since it can have a variable  size. Then after a **pointer** is assigned it goes on the **stack**. 
 
-Pointer are like a table of contents in a book. Pointer in rust are usually called a **reference**. A **reference** points to the memory of another value. The value is borrowed but not own. **Refernces** have a `&` in front of them. 
+Pointers are like a table of contents in a book. A pointer in rust is usually called a **reference**. A **reference** points to the memory of another value. The value is borrowed but not owned. **References** have a `&` in front of them. 
 
 ```rust
 let reg_var = 89; // regular variable
@@ -30,7 +30,7 @@ let five_refs = &&&&double_refs;
 print!("# Hello\n\t- one\n\t- two")
 ```
 
-Inside `""` you can write over many lines
+Inside `""` you can write over many lines, whitespace and line breaks are accounted for
 
 ```rust
 print!("# Hello
@@ -40,7 +40,18 @@ print!("# Hello
 Done")
 ```
 
-To ignore `"` and other escape characters use `r#` at the beginning and `#` at the end.
+
+### Output 
+
+```md
+# Hello
+	- one
+	- two
+	- three
+Done
+```
+
+To ignore `"` and other escaped characters use `r#` at the beginning and `#` at the end.
 
 ```rust
 println!(r#"quotes will print", \n and \t will print too.#)
@@ -107,13 +118,13 @@ Use the unicode escape `\u{}` to print Unicode characters inside a string `"\u{<
 
 ## Print Order
 
-Use numbers to change print order, index starts at `1`
+Use numbers to change print order, index starts at `0`
 
 ```rust
 let fam = "Kon";
 let dad = "Tachi";
 let son = "Katachi"
-println!("\nThis is {2} {0}, son of {1} {0}")
+println!("\nThis is {2} {0}, son of {1} {0}", fam, dad, son)
 ```
 
 Name print variables for easier access.
@@ -143,7 +154,7 @@ println!(
 ```rust
 let title = "TODAY'S NEWS";
 
-// no variable name, pad with -, put in centre, 30 characters long
+// no variable name, pad it with -, centered, 30 characters long
 println!("{:-^30}", title); 
 
 let bar = "|";

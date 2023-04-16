@@ -35,7 +35,7 @@ let product = num1 * num2;
 
 ## Variables and Code Blocks
 
-Variables start and end inside a code block.
+Variables start and end inside a code block `{}`.
 
 ```rust
 fn main() {
@@ -105,7 +105,7 @@ num = "five";
 
 ## Shadowing
 
-Declaring the a variable with the same name as an existing variable. The first variable is not destroyed but we wont have access if it's in the same scope because it's blocked.
+Declaring a variable with the same name as an existing variable. The first variable is not destroyed but we wont have access if it's in the same scope because it's blocked.
 
 ```rust
 let num = 8;

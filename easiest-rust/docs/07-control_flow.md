@@ -33,9 +33,9 @@ if num % 2 == 0 && num % 3 == 0 {
 
 ## `match`
 
-Use az **match** for a simpler format when **if else** becomes unwieldy. Every result must be consider for a **match**.
+Use **match** for a simpler format when **if else** becomes too unwieldy. Every result must be considered for a **match**.
 
-- format is `match` follow by a code-block `{}`.
+- format is `match` followed by a code-block `{}`.
 - Each line is called an arm, they are separated by `,`
 - Arm format: pattern/conditions, fat arrow `=>`, and instructions.
 

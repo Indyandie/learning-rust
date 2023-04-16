@@ -12,9 +12,9 @@ let other = String::from("Hello! 😂");
 	let my_str = "this is a &str"
 	```
 
-`String` is more functional but is slower than `&str`. It's pointer with data on the heap. It's an owned type.
+`String` is more functional but is slower than `&str`. It's a pointer with data on the heap. It's an owned type.
 
-`str` is a dynamically sized type. Different values can be a different size. Because of this `str` needs a pointer becuase Rust knows it's size.
+`str` is a dynamically sized type. Different values can be a different size. Because of this `str` needs a pointer because **Rust** knows it's size.
 
 
 ### Creating a String
@@ -42,7 +42,7 @@ Values that don't change are declared with `const` or `static`. The type is not 
 
 `const` is most commonly used.
 
-THey are written in CAPS outside of `main`.
+THey are written in SCREAMING_SNAKE_CASE outside of `main`.
 
 ```rust
 const NUMBER_OF_MONTHS: u8 12;
@@ -138,7 +138,7 @@ fn main() {
 ### The flow
 
 1. `my_string` `String` is created, `my_string` is the **owner**
-2. `my_string` is passed to `pr_str()` which doesn return anything, after `pr_str` is done the `my_string` `String` is dead. 
+2. `my_string` is passed to `pr_str()` which doesn't return anything, after `pr_str` is done the `my_string` `String` is dead. 
 3. Cannot pass `my_string` to `pr_str()` because it's dead.
 
 > You can pass return the value back from `pr_str()` and shadow the variable. 
@@ -189,7 +189,7 @@ fn main() {
 
 ### Review
 
-- `variable: String` - take a `String` and owns it. Doesn't return variable and it dies.
+- `variable: String` - takes a `String` and owns it. Doesn't return variable and it dies.
 - `variable: &String` - borrows a `String` and can look at it.
 - `variable: &mut String` - borrows a string and can change it. 
 

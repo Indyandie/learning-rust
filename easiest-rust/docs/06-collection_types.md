@@ -19,7 +19,7 @@ let arr1 = ["one", "two"]; // [&str, 2]
 let arr2 = ["one", "two", "three"] // [&str, 3]
 ```
 
-> Rust will return the type give bad instructions. `array01.aslfjalsj()`
+> Rust will return the type when bad instructions. `array01.aslfjalsj()`
 
 Declare an array with all the same values.
 
@@ -32,7 +32,7 @@ let mut buffers = [0; 640]
 
 ## Array index
 
-Get array entries by reffering to the index: `some_array[index]`. The index starts at `0`. 
+Get array entries by referring to the index: `some_array[index]`. The index starts at `0`. 
 ```rust
 let nums = [32, 89, -323];
 println!("Nums 2nd entry is {}", nums[1])
@@ -43,7 +43,7 @@ println!("Nums 2nd entry is {}", nums[1])
 Get a portion of an array by slicing it. Use a `&` because the compiler doesn't know the size. Use `..` to show the range. `&some_array[3..7]`
 
 - Index number start at `0`, not `1`
-- Index ranges are exclusive (do not include the last entry number)
+- Index ranges are exclusive (does not include the last entry number)
 
 ```rust
 let ten = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
@@ -174,7 +174,7 @@ fn example() {};
 fn example() -> () {};
 ```
 
-Tuple can hold many things and different types too. Items are index with numbers (`0`, `1`, `2`). They are accessed using `.` instead of `[]`. `my_tuple.0`
+Tuples can hold many things and different types too. Items are index with numbers (`0`, `1`, `2`). They are accessed using `.` instead of `[]`. `my_tuple.0`
 
 ```rust
 let rnd_tup = ("hello", 8, vec!['a'], 'b', [8, 9, 10], 7.8);

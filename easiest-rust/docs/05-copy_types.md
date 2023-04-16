@@ -16,7 +16,7 @@ Copy trait can be found in the type documentation under trait implementations **
 ### Example [`char`](https://doc.rust-lang.org/std/primitive.char.html).
 
 - **Copy** copied when sent into a function
-- **Display** can us `{}`
+- **Display** can use `{}`
 - **Debug** can us `{:?}`
 
 ```rust
