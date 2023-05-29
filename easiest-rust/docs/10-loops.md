@@ -9,7 +9,7 @@ A `loop` will repeat indefinitely unless there is terminating logic to break the
 ```rust
 // infinite loop
 loop {
-    println!("Eternity is forever...")
+    println!("Eternity is forever...");
 }
 
 let mut loop_counter = 0;
@@ -25,28 +25,28 @@ loop {
 
 ### Loop Labels
 
-> A `break` or `continue` will affec the inner most loop by default.
+> A `break` or `continue` will affect the inner most loop by default.
 
-Embedded loops can be named with loop lables using a leading `` ` tick `` and a trailing `:`, for example `` `loop_name: ``. Then a `break` can be a applied to a specific loop. 
+Embedded loops can be named with loop labels using a leading `' single quote` and a trailing `:`, for example `'loop_name:`. Then a `break` can be a applied to a specific loop. 
 
 
 ```rust
 let mut loop_counter_1 = 0;
 let mut loop_counter_2 = 0;
 
-`loop_1: loop {
+'loop_1: loop {
     loop_counter_1 += 1;
     println!("counter 1: {}", loop_counter_1);
 
     if loop_counter_1 > 9 {
         println!("Entering loop 2");
 
-        `loop_2: loop {
+        'loop_2: loop {
             println!("counter 2: {}", loop_counter_2);
             loop_counter_2 += 1;
 
             if loop_counter_2 > 5 {
-                break `loop_1;
+                break 'loop_1;
             }
         }
     }
@@ -99,7 +99,7 @@ The `enumerate` function can be be used to keep track of the number of loops.
 > The range must be wrapped in `()` parentheses.
 
 ```rust
-for (index, value) in (2,,32).enumerate() {
+for (index, value) in (2..32).enumerate() {
     println!("index = {}, value = {}", index, value)
 }
 ```
@@ -135,7 +135,7 @@ println!("The return value is {}.", return_value)
 
 ```rust
 fn color_comp(rgb: (i32, i32, i32)) {
-    let (red, green, blue) = rgb
+    let (red, green, blue) = rgb;
     println!("Checking color composition of red {}, green {}, and blue {}.", red, blue, green);
     let colors = vec![(red, "red"), (green, "green"), (blue, "blue")]
 
@@ -144,12 +144,12 @@ fn color_comp(rgb: (i32, i32, i32)) {
     for color in colors {
         if color < 10 {
             all_colors_min_10 = = false;
-            println!("Not much {}.)", color.1)
+            println!("Not much {}.)", color.1);
         }
     } 
 
     if all_colors_min_10 {
-        println!("Each color has at leas 10.\n")
+        println!("Each color has at leas 10.\n");
     }
 
 }
