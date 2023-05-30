@@ -86,7 +86,7 @@ for num in 0..=10 { // inclusive
 }
 
 for _ in 0..8 {
-    println!("Repeat, no variable.")
+    println!("Repeat, no variable.");
 }
 ```
 
