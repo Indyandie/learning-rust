@@ -1,6 +1,6 @@
 # Loops
 
-Loop iterate through a process. There are 3 types of loops, `loop`, `while`, and `for`.
+A **loop** iterates through a process. There are 3 types of loops, `loop`, `while`, and `for`.
 
 ## Loop
 
@@ -27,7 +27,7 @@ loop {
 
 > A `break` or `continue` will affect the inner most loop by default.
 
-Embedded loops can be named with loop labels using a leading `' single quote` and a trailing `:`, for example `'loop_name:`. Then a `break` can be a applied to a specific loop. 
+Embedded loops can be named with loop labels using a leading `' single quote` and a trailing `:`, for example `'loop_name:`. Then a `break` can be a applied to a specific loop `break 'loop_name;` 
 
 
 ```rust

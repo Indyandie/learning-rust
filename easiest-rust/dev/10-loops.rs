@@ -16,6 +16,7 @@ fn color_comp(rgb: (i32, i32, i32)) {
     }
     println!();
 }
+
 fn main () {
     println!("# Loops");
 
