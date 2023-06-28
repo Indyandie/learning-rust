@@ -2,7 +2,9 @@
 
 Let's see how this goes. Start [here](https://play.rust-lang.org/?version=stable&mode=debug&edition=2021). 
 
-## Reference
+## References
+
+- [Rust Book](https://doc.rust-lang.org/book/)
 
 ### Easy Rust
 
