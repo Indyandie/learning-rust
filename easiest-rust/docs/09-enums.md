@@ -1,6 +1,7 @@
 # Enums
 
-- (rust enums)[https://web.mit.edu/rust-lang_v1.25/arch/amd64_ubuntu1404/share/doc/rust/html/book/first-edition/enums.html]
+- (Defining an Enum)[https://doc.rust-lang.org/book/ch06-01-defining-an-enum.html#defining-an-enum]
+- (enums)[https://web.mit.edu/rust-lang_v1.25/arch/amd64_ubuntu1404/share/doc/rust/html/book/first-edition/enums.html]
 - (easy-rust)[https://dhghomon.github.io/easy_rust/Chapter_25.html]
 
 An `enum` (enumartion) is a type which represents data that's one of several variants (choices). They resemble structs but are very different.
