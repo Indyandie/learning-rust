@@ -6,11 +6,12 @@ fn main() {
 }
 ```
 
-`fn` is a function
-`main` is the function that starts the program
-`()` contained variables
-`{}` is a code block
-`println!` is a macro, a function that writes code. They have a `!` after the name.
+- `fn` denotes a function
+- `main` is the name of the function that starts the program
+- `()` contains variables
+- `{}` is a code block
+- `println!` is a macro, a function that writes code.
+	- Macros have a `!` after the name. `macro_name!`
 
 ## Return something
 
@@ -20,15 +21,15 @@ fn number() -> i32 {
 }
 ```
 
-`->` skinny arrow, show what a function returns
-exclude `;` to return something
-or write `return something;`
+- `->` skinny arrow, define what a function returns
+- exclude the trailing `;` to return something
+	- Or write `return some_value;`
 
 ## Accept variables
 
 ```rust
 fn multi(num1: i32, num2: i32) {
-let product = num1 * num2;
+	let product = num1 * num2;
 }
 ```
 
@@ -41,9 +42,9 @@ Variables start and end inside a code block `{}`.
 fn main() {
 	{
 		let cb_num = 320
-	}:
+	};
 
-	println!("cb_num is not accesible")
+	println!("cb_num is not accesible");
 }
 ```
 
@@ -62,11 +63,11 @@ fn main() {
 
 ## Display and debug
 
-Debug is printing for the programmer. 
+> Debug is printing for the programmer. 
 
-Use `{}` for display. Use `{:?}` to debug. 
-
-Pretty print `{:#?}`, is `{:?}` with addtional formatting 
+- Use `{}` for display.
+- Use `{:?}` to debug. 
+	- Pretty print `{:#?}`, is `{:?}` with addtional formatting 
 
 use `print!` to exclude new line at the end.
 
@@ -75,12 +76,12 @@ use `print!` to exclude new line at the end.
 `<type>::MIN` or `<type>::MAX`
 
 ```rust
-print!("Smallest number {}, Largest number {}", i8::MIN, i8::MAX)
+print!("i8 smallest number {}, Largest number {}", i8::MIN, i8::MAX)
 ```
 
 ## Mutability
 
-Variable declared with `let` are immutable.
+Variables declared with `let` are immutable.
 
 ```rust
 fn main() {
@@ -89,14 +90,14 @@ fn main() {
 } 
 ```
 
-Add `mut` after `let` to mutable. 
+Add `mut` after `let` to declare a variable as mutable. 
 
 ```rust
 let mut num = 5;
 num = 100;
 ```
 
-You cannot change the type.
+The _type_ of a _variable_ cannot be changed.
 
 ```rust
 let mut num = 5;
@@ -105,16 +106,16 @@ num = "five";
 
 ## Shadowing
 
-Declaring a variable with the same name as an existing variable. The first variable is not destroyed but we wont have access if it's in the same scope because it's blocked.
+Declaring a variable with the same name as an existing variable is referred to as _shadowing_. The _first variable_ is not destroyed but access is lost if it's in the same scope because it's blocked.
 
 ```rust
 let num = 8;
-println!("num og {}", num);
+println!("first instance of num {}", num);
 let num = 100;
-println!("num og {}", num);
+println!("the second instance of num {}", num);
 ```
 
-If in different scopes we can see both.
+If _variables_ with the same name exist in different scopes shadowing doesn't occor.
 
 ```rust
 let num = 8;
@@ -124,7 +125,7 @@ println!("{}", num)
 }
 ```
 
-Shadowning is helpful when it needs to be changed multiple times.
+Shadowning is helpful when a _variable_ needs to be changed multiple times.
 
 ```rust
 let x = 10;
