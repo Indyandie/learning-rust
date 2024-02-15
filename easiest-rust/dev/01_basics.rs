@@ -13,13 +13,14 @@ fn main() {
     // i8 is one byte and i128 5 bytes
     //
     
-    // char
+    // chars
     let _first_letter = 'A';
     let _space = ' ';
     let _other_language_char = 'Ꮔ';
     let _emoji = '😺';
     
-    // this will not work bcause it the default number is i32
+    // this will not work because the default number type is i32
+    // error[E0604]: only `u8` can be cast as `char`, not `i32`
     // println!("{}", some_number as char);
 
     // a char can be cast as a u8

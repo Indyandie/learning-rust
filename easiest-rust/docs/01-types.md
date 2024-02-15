@@ -1,6 +1,6 @@
 ## Type References 
 
-If the the type is not specified the compiler will the decide for you. 
+If the type is not specified the compiler will the decide for you. 
 
 ```rust
 fn main() {
@@ -19,7 +19,7 @@ let num = 98u8 // u8
 
 ## Float
 
-Number with decimals `4.4`.
+Fractions `4.4`.
 
 ```rust
 let my_float = 4.4;
@@ -34,10 +34,10 @@ let float_two: f32 = 8.3;
 // this will not work because the types are different 
 let float_three: float_one + float_two; 
 
-// fix by casting as the right type
+// this can be fixed by casting with the correct type
 let float_three: float_one + float_two as f64; 
 
-// or let rust decied by excluding the type
+// or let rust decided by excluding the type
 let float_one = 5.0; // rust will usaully choose f64 
 let float_two = 8.3; 
 
