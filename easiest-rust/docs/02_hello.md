@@ -21,7 +21,7 @@ fn number() -> i32 {
 }
 ```
 
-- `->` skinny arrow, define what a function returns
+- `->` skinny arrow, defines the type a function return
 - exclude the trailing `;` to return something
 	- Or write `return some_value;`
 
@@ -106,7 +106,7 @@ num = "five";
 
 ## Shadowing
 
-Declaring a variable with the same name as an existing variable is referred to as _shadowing_. The _first variable_ is not destroyed but access is lost if it's in the same scope because it's blocked.
+Declaring a _variable_ with the same name as an _existing variable_ is referred to as _shadowing_. The _first variable_ is not destroyed but access is lost if it's in the same scope because it's blocked.
 
 ```rust
 let num = 8;

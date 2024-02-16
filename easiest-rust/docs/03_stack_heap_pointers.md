@@ -1,12 +1,12 @@
 # Stack, Heap, & Pointers
 
-The stack and heap are places where memory is stored.
+The **stack** and **heap** are places where memory is stored.
 
 - **Stack** is very fast, a lot faster than the **heap**.
-- Rust need to know the size of a variable at compile time. Simple variables like `i32` go on the stack, since exact size is known. `i32` is 4 bytes
-- Some type have an unknown size at compile. First the data goes on the **heap** since it can have a variable  size. Then after a **pointer** is assigned it goes on the **stack**. 
+- Rust need to know the size of a _variable_ at compile time. Simple variables like `i32` go on the **stack**, since exact size is known. `i32` is `4` bytes
+- Some type have an unknown size at compile. First, the data goes on the **heap** since it can have a variable  size. Then after a **pointer** is assigned and it goes on the **stack**. 
 
-Pointers are like a table of contents in a book. A pointer in rust is usually called a **reference**. A **reference** points to the memory of another value. The value is borrowed but not owned. **References** have a `&` in front of them. 
+**Pointers** are like a table of contents in a book. A **pointer** in rust is usually called a **reference**. A **reference** points to the memory of another value. The value is borrowed but not owned. **References** have a `&` in front of them. 
 
 ```rust
 let reg_var = 89; // regular variable
@@ -14,6 +14,8 @@ let ex_reference = &reg_var; // make a reference
 ```
 
 A reference can reference a reference.
+
+> xzibit meme goes here
 
 ```rust
 let num = 5;
@@ -43,13 +45,14 @@ Done")
 
 ### Output 
 
-```md
+```
 # Hello
 	- one
 	- two
 	- three
 Done
 ```
+### Escaped Characters
 
 To ignore `"` and other escaped characters use `r#` at the beginning and `#` at the end.
 
@@ -62,6 +65,8 @@ To include `#` add a `#` at the beginning and the end.
 ```rust
 println!(r##"ID: #00000324"##)
 ```
+
+### Using Keywords
 
 `r#` can be used to name variables with keywords (`fn`, `let`, `mut`)
 
@@ -79,7 +84,9 @@ fn main() {
 }
 ```
 
-To print the bytes of a `char` or `&str`, write `b` before the string. It works for all `ASCII`. For a `char` it called a **byte**, and a **byte string** for a `&str`
+### Printing Bytes
+
+To print the bytes of a `char` or `&str`, write `b` before the string. It works for all `ASCII`. For a `char` it called a **byte** for a `char`, and a **byte string** for a `&str`
 
 ```
 ☺☻♥♦♣♠♫☼►◄↕‼¶§▬↨↑↓→∟↔▲▼123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~
@@ -95,6 +102,8 @@ You can combine `b` with `r#`.
 print!("{:?}", br##"/,'"', and #."##)
 ```
 
+### Unicode
+
 Use the unicode escape `\u{}` to print Unicode characters inside a string `"\u{<Unicode-character>}"` 
 
 ```rust
@@ -106,11 +115,13 @@ Use the unicode escape `\u{}` to print Unicode characters inside a string `"\u{<
 - `{:?}` debugs
 - `{:#?}` pretty printing
 - `{:p}` prints pointer address, location in computer's memory
-		```rust
-		let num = 8;
-		let num_ref = &num;
-		println!("pointer address for num: {:p}", num_ref);
-		```
+
+```rust
+let num = 8;
+let num_ref = &num;
+println!("pointer address for num: {:p}", num_ref);
+```
+
 - `{:b}` binary
 - `{:x}` hexadecimal
 - `{:o}` octal
@@ -118,7 +129,7 @@ Use the unicode escape `\u{}` to print Unicode characters inside a string `"\u{<
 
 ## Print Order
 
-Use numbers to change print order, index starts at `0`
+Use numbers to change print order of _variables_, the index begins at `0`
 
 ```rust
 let fam = "Kon";
@@ -147,7 +158,7 @@ println!(
 
 `{:-^11}` 
 - `-` padding char, 
-- `^` alignment (centered), 
+- `^` alignment (`^` centered, `<` left, `>` right), 
 - `11` minimum length
 
 
