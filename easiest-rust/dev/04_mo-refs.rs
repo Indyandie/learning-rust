@@ -22,8 +22,10 @@ fn main() {
     let mut my_string = String::from("A string");
     add_str(&mut my_string);
     add_str(&mut my_string);
+    println!("original variable: {}", my_string);
 
     println!("\n\n# Func mut var\n");
     let my_string = String::from("A string");
     add_word(my_string);
+    // println!("{}", my_string)
 }

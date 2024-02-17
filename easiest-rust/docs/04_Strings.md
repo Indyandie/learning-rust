@@ -1,20 +1,21 @@
 # Strings
 
-Two type of strings, `String` and `&str`. Both support UTF-8 and emojis. Each is closely related. 
+Two type of strings, `String` and `&str`. Both support `UTF-8` and emojis. Each is closely related. 
 
 ```rust
-let name = "서태지 😂";
-let other = String::from("Hello! 😂");
+let name = "서태지 😂"; // &str
+let other = String::from("Hello! 😂"); // String
 ```
 
-`&str` is a simple and fast string. It is used with a reference `&` because the stack need to know the size. Not an owned type.
-	```rust
-	let my_str = "this is a &str"
-	```
+`&str` is a simple and _fast string_. It is used with a reference `&` because the _stack_ need to know the size. Not an owned type.
 
-`String` is more functional but is slower than `&str`. It's a pointer with data on the heap. It's an owned type.
+```rust
+let my_str = "this is a &str"
+```
 
-`str` is a dynamically sized type. Different values can be a different size. Because of this `str` needs a pointer because **Rust** knows it's size.
+`String` is more functional but is slower than `&str`. It's a pointer with data on the _heap_. It's an owned type.
+
+`&str` is a dynamically sized type. Different values can be a different size. Because of this `&str` needs a pointer because **Rust** knows it's size.
 
 
 ### Creating a String
@@ -38,11 +39,11 @@ let string_4: String = "This is a string of text".into();
 
 Values that don't change are declared with `const` or `static`. The type is not inferred for these declarations.
 
-> THey are both very similar except that `static` has fixed memory location and can act a global variable. 
+> THey are both very similar except that `static` has fixed memory location and can act a as global variable. 
 
-`const` is most commonly used.
+> `const` is most commonly used.
 
-THey are written in SCREAMING_SNAKE_CASE outside of `main`.
+They are written in SCREAMING_SNAKE_CASE outside of `main`.
 
 ```rust
 const NUMBER_OF_MONTHS: u8 12;
@@ -75,7 +76,7 @@ fn main() {
 }
 ```
 
-The above won't work because the referenced `String` only live inside the function code block, and then it dies. It is erased from memory and that's what's referenced. This happens because there is no ownership.
+The code above won't work because the referenced `String` only lives inside the function code block, and then it dies. It is erased from memory and can't be referenced. This happens because there is no ownership.
 
 ## Mutable Reference
 
@@ -88,7 +89,7 @@ let mut num = 8; // the variable must be mutable
 let num_ref = &mut num;
 ```
 
-cannot `num_ref += 10` cause the types are different num_ref is an `&i32`. The type can be adjust using `*`. `*` will use the reference but the direct value being referenced.
+cannot `num_ref += 10` cause the types are different `num_ref` is an `&i32`. The type can be adjust using `*`. `*` will use the direct value being referenced.
 
 ```rust
 *num_ref += 10;
@@ -102,15 +103,43 @@ println!("re3 is equal to num2? {}", num2 == ***ref3);
 
 This method using the `*` is called dereferencing.
 
-### Rules for mutable and immutable references
+### Rules for mutable and immutable (shared) references
 
 1. If only immutable references, there is no limit.
+
+```rust
+let num = 32;
+let num_ref_1 = &num;
+let num_ref_2 = &&num;
+let num_ref_3 = &&&num;
+let num_ref_4 = &&&&num;
+```
+
 2. Only 1 mutable reference is allowed.
+
+```rust
+let mut num = 32;
+let num_ref_1 = &mut num;
+*num_ref_1 = 64;
+print!("mutable ref: {}", num_ref_1);
+
+// this is not allowed
+let num_ref_2 = &mut num;
+```
+
 3. Immutable and mutable cannot be referenced together.
+
+```rust
+let mut num = 32;
+
+// only one type can exist
+let num_mut_ref = &mut num;
+let num_imut_ref = &num;
+```
 
 ## More Shadowing
 
-Seeing how shadowing work with ref. Shadowing doesn't destroy the value but blocks it.
+Seeing how shadowing work with references. Shadowing doesn't destroy the value but blocks it.
 
 ```rust
 let city = String::from("Town");
@@ -119,9 +148,9 @@ let city = 100;
 println!("og ref{}, shadow {}", city_ref, city);
 ```
 
-## Passing Refs to functions
+## Passing References to functions
 
-The rule for **Rust** values is it can only have 1 owner.
+**Rust** rule: values can only have _1 owner_.
 
 ```rust
 fn pr_str(pr_str: String) {
@@ -130,7 +159,7 @@ fn pr_str(pr_str: String) {
 
 fn main() {
     let my_string = String::from("hello");
-    pr_str(my_string); // success
+    pr_str(my_string); // success - pr_str becomes the new owner of my_string
     pr_str(my_string); // error: my_string was destroyed
 }
 ```
@@ -156,7 +185,7 @@ fn main() {
 }
 ```
 
-### Using ref with functions
+### Using references with functions
 
 `pr_str` will take a `String` referenece
 
@@ -206,5 +235,4 @@ fn add_word(mut da_str: String) {
     println!("{}", da_str)
 }
 ```
-
 

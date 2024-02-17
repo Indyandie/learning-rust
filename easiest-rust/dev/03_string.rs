@@ -1,8 +1,9 @@
-fn rtn_str() -> &'static String {
+// fn rtn_str() -> &'static String {
+fn rtn_str() -> String {
     let country = String::from("Japan");
-    let country_ref = &country;
-    country_ref // This is a problem
-    // country
+    // let country_ref = &country;
+    // country_ref // This is a problem
+    country
 }
 
 fn main() {
@@ -26,22 +27,30 @@ fn main() {
     let string_4: String = "This is a string of text".into();
     
     println!(
-        "\n\nStrings:\nfrom(): {}\n&str: {}\nformat! {}\ninto() {}",
+        "\n\n#Strings\n\nString::from(): {}\n&str.to_string(): {}\nformat! {}\ninto() {}",
         string_1, string_2, string_3, string_4
     );
 
-    println!("\n\nMutable Refs");
+    println!("\n\n# Mutable Refs");
     let mut num = 8;
-    println!("\nog {}", num);
+    println!("\nog num {}", num);
     let num_ref = &mut num;
     *num_ref += 10;
-    let num_ref_i = &num;
-    println!("mutated {}, imut {}", num, num_ref_i);
+
+    // breaks reference rules
+    // let num_ref_i = &num;
+    // println!("mutated {}, imut {}", num_ref, num_ref_i);
+
+    println!("mutated {}", num_ref);
+
+    let num2 = 24;
+    let num2_ref = &num2;
+    println!("imut {}", num2_ref);
 
     
     println!("\n\nTriple Refs");
     let num2 = 800;
-    println!("\nog {}", num2);
+    println!("\nnum2: {}", num2);
     let num2_3ref = &&&num2;
     println!("num2_3ref is equal to num2? {}", num2 == ***num2_3ref);
     
@@ -52,4 +61,5 @@ fn main() {
     println!("og ref {}, shadow {}", city_ref, city);
 
     let country = rtn_str();
+    print!("\n\ncountry: {}", country)
 }
