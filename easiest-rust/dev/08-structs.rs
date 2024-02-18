@@ -1,8 +1,9 @@
-// struct UnitStruct;
+// struct UnitStruct; // unit struct
 
-struct Color (u8, u8, u8);
-struct CoolColor (String, Color);
-struct ColorName<'a> { // need lo learn about lifetimes
+struct Color(u8, u8, u8); // typle struct
+struct CoolColor(String, Color);
+struct ColorName<'a> {
+    // named struct - need lo learn about lifetimes
     name: &'a str,
     color: Color,
 } // no ; required due to the code block {}
@@ -14,13 +15,16 @@ struct Pokemon {
     r#type: Vec<String>,
 }
 
-fn main () {
+fn main() {
     println!("# Structs");
 
     let blue = CoolColor("Blue".to_string(), Color(0, 0, 255));
 
     println!("## Tuple Structs");
-    println!("{} is a CoolColor tuple struct. It has {} blue.", blue.0, blue.1.2);
+    println!(
+        "{} is a CoolColor tuple struct. It has {} blue.",
+        blue.0, blue.1 .2
+    );
     println!("\n\n");
 
     let red = Color(255, 0, 0);
@@ -28,9 +32,12 @@ fn main () {
         name: "Red",
         color: red,
     };
-    
+
     println!("## Tuple Structs");
-    println!("{} is a ColorName named struct. it has {} red.", color_red.name, color_red.color.0);
+    println!(
+        "{} is a ColorName named struct. it has {} red.",
+        color_red.name, color_red.color.0
+    );
 
     println!("\n\n");
 
@@ -42,9 +49,12 @@ fn main () {
     let bulbasaur = Pokemon {
         name,
         pokedex_number,
-        r#type: vec![grass, poison]
+        r#type: vec![grass, poison],
     };
 
-    println!("Pokemon number {} is {}. Type is {} and {}.", bulbasaur.pokedex_number, bulbasaur.name, bulbasaur.r#type[0], bulbasaur.r#type[1]);
+    println!(
+        "Pokemon number {} is {}. Type is {} and {}.",
+        bulbasaur.pokedex_number, bulbasaur.name, bulbasaur.r#type[0], bulbasaur.r#type[1]
+    );
     println!("\n{:?}", bulbasaur)
 }

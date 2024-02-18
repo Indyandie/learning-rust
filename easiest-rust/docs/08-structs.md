@@ -17,7 +17,7 @@ struct UnitStruct;
 
 ## Tuple Struct
 
-Also known as unnamed structs. To define tuple struct only the types are required.
+Also known as _unnamed structs_. To define a _tuple struct_ only the types are required.
 
 ```rust
 struct CoolColors (String, u8, u8, u8);
@@ -31,7 +31,7 @@ fn main () {
 
 ## Named Structs
 
-To define a name struct a name and type are required for each property. 
+To define a _name struct_ a name and type are required for each property. 
 
 ```rust
 struct Color (u8, u8, u8);

@@ -20,7 +20,6 @@ fn lp_rtn(mut cnt: i32) -> i32 {
     cnt
 }
 fn main() {
-
     println!("Copy type");
     let my_num = 8;
     prt_num(my_num);
@@ -47,19 +46,17 @@ fn main() {
     let my_num;
 
     {
-        let num = {
-            57
-        };
+        let num = { 170 };
 
         my_num = lp_rtn(num)
     }
 
-    println!("{}", my_num);
+    println!("my_num: {}", my_num);
 
     let my_num;
     {
         my_num = 100;
     }
 
-    println!("{}", my_num);
+    println!("my_num: {}", my_num);
 }

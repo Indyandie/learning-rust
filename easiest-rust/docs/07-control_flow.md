@@ -8,6 +8,7 @@ The simplest control flow is `if`.
 
 ```rust
 let num = 5;
+
 if num == 7 {
     println!("It's seven")
 } else if num == 6 {
@@ -17,7 +18,10 @@ if num == 7 {
 }
 ```
 
-> Logical operators: `&&` and. `||` or
+### Logical operators
+
+- `&&` AND
+- `||` OR
 
 ```rust
 let num = 9
@@ -35,12 +39,13 @@ if num % 2 == 0 && num % 3 == 0 {
 
 Use **match** for a simpler format when **if else** becomes too unwieldy. Every result must be considered for a **match**.
 
-- format is `match` followed by a code-block `{}`.
-- Each line is called an arm, they are separated by `,`
-- Arm format: pattern/conditions, fat arrow `=>`, and instructions.
+- format is `match` followed by a _code block_ `{}`.
+- Each line is called an _arm_, they are separated by `,`
+- _Arm_ format: pattern/conditions, fat arrow `=>`, and instructions.
 
 ```rust
 let num: u8 = 16;
+
 match num {
     0 => println!("It's zero."),
     1 => println!("It's one."),
@@ -62,7 +67,7 @@ let match_num = match num {
 };
 ```
 
-More complicated tuples
+More complicated _tuples_
 
 ```rust
 let sky = "cloudy";
@@ -116,7 +121,7 @@ fn main() {
 
 ### Same arms
 
-A `match`'s arms must each return the same value type.
+The arms in a `match` must each return the same value type.
 
 ```rust
 let num = 10;

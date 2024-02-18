@@ -1,8 +1,8 @@
 # Copy Types
 
-In Rust `copy types` are very simple types that exist on the stack and the compiler know there size.
+In **Rust** `copy types` are very simple types that exist on the _stack_ and the compiler knows there size.
 
-The compiler always copies them when sent to a function because they are so small and easy to copy. 
+> The compiler always copies `copy types` when they sent into a function because they're so small. 
 
 ## Types
 
@@ -11,13 +11,13 @@ The compiler always copies them when sent to a function because they are so smal
 - Booleans (`true` & `false`)
 - `char`
 
-Copy trait can be found in the type documentation under trait implementations **Copy**. 
+The _copy trait_ can be found in the type documentation under trait implementations **Copy**. 
 
 ### Example [`char`](https://doc.rust-lang.org/std/primitive.char.html).
 
 - **Copy** copied when sent into a function
 - **Display** can use `{}`
-- **Debug** can us `{:?}`
+- **Debug** can use `{:?}`
 
 ```rust
 fn prt_num(num: i32) {
@@ -33,7 +33,7 @@ fn main() {
 
 ### Clone trait
 
-`String` is not a copy type but it has the **Clone** trait which can be used instead a reference to pass the value into a function.
+`String` is not a _copy type_ but it has the **Clone** trait which can be used instead of a reference to pass the value into a function.
 
 Use `string_var.clone()` to create a clone.
 
@@ -45,7 +45,7 @@ fn pr_str(str_var: String) {
 fn main() {
     let my_str = String::from("A string.");
     pr_str(my_str.clone());
-    pr_str(my_str)
+    pr_str(my_str) // now it's dead
 }
 ```
 
@@ -90,7 +90,7 @@ let un_var;
 
 ### Uses
 
-If a code block contains a variable that needs to exist outside of the code block.
+If a _code block_ contains a _variable_ that needs to exist outside of the _code block_.
 
 ```rust
 fn loop_rtn(mut count: i32) {
@@ -118,7 +118,7 @@ fn main() {
 }
 ```
 
-`my_num` is the declared in `main` so it exist until the end of the function, and get's itvalue from inside the code block. The `my_value` stores the value but it it was `let my_value` it would die inside the code block. 
+`my_num` is declared in `main` so it only exist until the end of the function, and gets it value from inside the _code block_.
 
 > Simpler version
 >
