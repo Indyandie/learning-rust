@@ -1,8 +1,8 @@
 # Structs
 
-Structs are used to create new types.  They are created with keyword `struct`, and should be `PascalCased`.
+_Structs_ are used to create new _types_.  They are created with keyword `struct`, and should be `PascalCased`.
 
-There are 3 type of **structs**.
+There are `3` type of **structs**.
 - unit
 - tuple
 - named

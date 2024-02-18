@@ -4,9 +4,9 @@
 - (enums)[https://web.mit.edu/rust-lang_v1.25/arch/amd64_ubuntu1404/share/doc/rust/html/book/first-edition/enums.html]
 - (easy-rust)[https://dhghomon.github.io/easy_rust/Chapter_25.html]
 
-An `enum` (enumartion) is a type which represents data that's one of several variants (choices). They resemble structs but are very different.
-- Struct provides a way to create complex data types, Example a DND character
-- Enum provides a way to represent data variants, Example a DND character's race and class
+An `enum` (enumartion) is a type which represents data that's one of several variants (choices). They resemble _structs_ but are very different.
+- _Structs_ provides a way to create complex data types, Example a DND character
+- _Enums_ provides a way to represent data variants, Example a DND character's race and class
 
 ## Declaring an `enum`
 
@@ -33,9 +33,10 @@ fn main() {
 }
 ```
 
-## Import Enums
+## Importng Enums
 
 By importing the `enum` to the function you omit `EnumName::` and refer directly to the variant. 
+
 ```rust
 enum Seasons {
     Winter,
@@ -53,7 +54,7 @@ fn main() {
 
 ## Enum Variants
 
-If an enum variant doesnt store data it can be cast as an int to obtain the index. You can assign this manually `Variant = 32`, if another variant is add after it will be `33`.
+If an enum variant doesnt store data it can be cast as an `int` to obtain the index. You can assign this manually `Variant = 32`, if another variant is added after its index will be `33`.
 
 ```rust
 enum Binary{

@@ -13,7 +13,7 @@ fn getsky(time: i32) -> ThingsInTheSky {
     use ThingsInTheSky::*;
 
     match time {
-        6..=18 => Sun("The Sun is in the sky.".to_string()),
+        6..=18 => Sun("The Sun is in the sky.".to_string()), // match a range
         _ => Stars("The stars are in the sky.".to_string()),
     }
 }
@@ -40,7 +40,7 @@ fn getmoodlevel(mood: &Mood) -> u8 {
 enum PowerLevels {
     DoYouEvenLift,
     Weak,
-    GardentAnt,
+    GardenAnt,
     GroceryBags,
     OverNineThousand = 90001,
     OldManStrength,
@@ -53,6 +53,7 @@ enum Number {
 
 fn makenumber(number: i32) -> Number {
     use Number::*;
+
     match number.is_positive() {
         true => U16(number as u16),
         false => I32(number as i32),
@@ -60,8 +61,10 @@ fn makenumber(number: i32) -> Number {
 }
 
 fn main() {
-    println!("# Variant Values\n");
     use Number::*;
+
+    println!("# Variant Values\n");
+
     let some_numbers = vec![makenumber(-234), makenumber(23)];
     for num in some_numbers {
         match num {
@@ -72,29 +75,38 @@ fn main() {
     println!("\n\n");
 
     println!("# Variant Values\n");
+
     use PowerLevels::*;
+
     let powerlevels = vec![
         DoYouEvenLift,
         Weak,
-        GardentAnt,
+        GardenAnt,
         GroceryBags,
         OverNineThousand,
         OldManStrength,
     ];
+
     for level in powerlevels {
         println!("PowerLevels variant {}", level as i32);
     }
+
     println!("\n\n");
 
     println!("# Sky Enums\n");
+
     let time = 4;
     let mysky = getsky(time);
+
     printsky(&mysky);
+
     println!("\n\n");
 
-    println!("# Sky Enums\n");
+    println!("# Mood Enums\n");
+
     let my_mood = Mood::Angry;
     let my_mood_level = getmoodlevel(&my_mood);
+
     println!("My current mood level is {}.", my_mood_level);
     println!("\n\n");
 }
