@@ -32,6 +32,7 @@ fn process_item_strings(item: &Item) {
     } = item;
 
     let item_strings = vec![name, &attributes[0]];
+
     println!("The item Strings are {:?}", item_strings);
 }
 
@@ -61,17 +62,22 @@ fn main() {
     } = bulbasaur;
 
     println!("{} {}: level {}, types - {}, {}", a, b, c, d[0], d[1]);
+    println!("{a} {b}: level {c}, types - {d:?}");
 
     let pokeball = Item::new(1, format!("master-ball"), 3.5, vec![format!("holdable")]);
+
+    println!();
     process_item_strings(&pokeball);
+
     println!("id: {}, cost: {}", pokeball.id, pokeball.cost);
 
     println!("\n## Enums\n");
 
     let basic = PokemonType::Normal(format!("Meowth"));
-
     if let PokemonType::Normal(pokemon_name) = &basic {
         println!("The Normal Pokemon is {pokemon_name}")
+    } else {
+        println!("nothing")
     }
 
     let name = match basic {
@@ -79,5 +85,5 @@ fn main() {
         _ => "Nothing".to_string(),
     };
 
-    println!("{name}");
+    println!("name: {name}");
 }
