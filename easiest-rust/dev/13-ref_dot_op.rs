@@ -22,22 +22,29 @@ fn main() {
 
     // this will not compile, different types u8 and &u8
     // println!("{}", num == num_ref);
-    println!("{}", num == *num_ref);
+    println!("num and num_ref are equal - {}", num == *num_ref);
 
     println!("\n## Dot Operator\n");
     let item = Item { num: 8 };
     let ref_item_num = &item.num; // &u8 type
-                                  // cannot compare &u8 and u8
-                                  // println!("{}", ref_item_num == 8);
-    println!("{}", *ref_item_num == 8);
 
-    //using the dot oparator
+    // cannot compare &u8 and u8
+    // println!("{}", ref_item_num == 8);
+
+    println!("ref_item_num is equal to 8 - {}", *ref_item_num == 8);
+
+    // using the dot operator
     let ref_item_num_dot = &item;
 
-    // no ref required
-    println!("{}", ref_item_num_dot.num == 8);
+    println!("\n\n## Dot Operator");
 
-    println!("\n## Method\n");
+    // no ref required
+    println!(
+        "ref_item_num_dot.num is equal to 8 - {}",
+        ref_item_num_dot.num == 8
+    );
+
+    println!("\n## Struct Method\n");
     let ref_item = &item;
     let ref_item_deep = &ref_item;
 

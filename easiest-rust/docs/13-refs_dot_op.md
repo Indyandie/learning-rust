@@ -1,6 +1,6 @@
 # References & Dot Operator
 
-Normally, to access the value from a reference (`&value`) the `*` is used (`*value`) to dereference. 
+Normally, to access the value from a _reference_ (`&value`) the `*` is used (`*value`) to _dereference_. 
 
 ```rust
 fn main() {
