@@ -13,7 +13,7 @@ fn main() {
 }
 ```
 
-But when a method is used, Rust will dereference. The dot operator (`.`) in a method dereferences the value.   
+But when a _method_ is used, **Rust** will _dereference_. The _dot operator_ (`.`) in a method dereferences the value.   
 
 ```rust
 struct Item {
