@@ -16,7 +16,9 @@ let mut loop_counter = 0;
 
 loop {
     loop_counter += 1;
+
     println!("loop counter: {}", loop_counter);
+
     if loop_counter > 6 {
         break;
     }
@@ -34,19 +36,19 @@ Embedded loops can be named with loop labels using a leading `' single quote` an
 let mut loop_counter_1 = 0;
 let mut loop_counter_2 = 0;
 
-'loop_1: loop {
+'loop_outer: loop {
     loop_counter_1 += 1;
     println!("counter 1: {}", loop_counter_1);
 
     if loop_counter_1 > 9 {
-        println!("Entering loop 2");
+        println!("Entering inner loop");
 
-        'loop_2: loop {
-            println!("counter 2: {}", loop_counter_2);
+        'loop_inner: loop {
+            println!("\tcounter 2: {}", loop_counter_2);
             loop_counter_2 += 1;
 
             if loop_counter_2 > 5 {
-                break 'loop_1;
+                break 'loop_outer;
             }
         }
     }
@@ -74,7 +76,7 @@ while !while_counter {
 
 ## For Loop
 
-A `for loop` repeats a particular number of times. Ranges are commonly used with `for loops`, using `..` or `..=`.  
+A `for loop` repeat a particular number of times. Ranges are commonly used with `for loops`, using `..` or `..=`.  
 
 ```rust
 for number in 0..3 { // esclusive
@@ -142,7 +144,7 @@ fn color_comp(rgb: (i32, i32, i32)) {
     // check min  10
     let mut all_colors_min_10 = true;
     for color in colors {
-        if color < 10 {
+        if color.0 < 10 {
             all_colors_min_10 = = false;
             println!("Not much {}.)", color.1);
         }

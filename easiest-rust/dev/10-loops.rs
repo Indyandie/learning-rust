@@ -17,10 +17,10 @@ fn color_comp(rgb: (i32, i32, i32)) {
     println!();
 }
 
-fn main () {
+fn main() {
     println!("# Loops");
 
-    println!("# loop");
+    println!("## loop");
     let mut lp_count = 0;
 
     loop {
@@ -33,7 +33,7 @@ fn main () {
     }
     println!("\n");
 
-    println!("# loop labels");
+    println!("### loop labels");
     let mut lp_count1 = 0;
     let mut lp_count2 = 0;
 
@@ -42,7 +42,7 @@ fn main () {
         println!("counter 1: {lp_count1}");
 
         '_lp2: loop {
-            println!("counter 2: {lp_count2} \n");
+            println!("\tcounter 2: {lp_count2} \n");
             lp_count2 += 1;
 
             if lp_count2 > 5 {
@@ -71,12 +71,12 @@ fn main () {
     for num in 0..3 {
         println!("number: {num}");
     }
-    println!("\n Iterator\n");
+    println!("\n## Iterator\n");
 
     for (idx, num) in (2..=10).enumerate() {
-        println!("{idx}: {num}")
+        println!("index: {idx}: value: {num}")
     }
-    println!("\n");
+    println!("\n---\n");
 
     let lines = "hello\nworld!\nwhats\nup".lines();
     for (lnum, ln) in lines.enumerate() {
@@ -101,7 +101,7 @@ fn main () {
     let red = (200, 0, 0);
     let gray = (50, 50, 50);
     let redish = (220, 20, 0);
-    
+
     color_comp(red);
     color_comp(gray);
     color_comp(redish);
