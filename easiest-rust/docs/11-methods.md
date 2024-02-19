@@ -2,8 +2,8 @@
 
 Use the `impl` block to define `struct` and `enum` functions.
 
-- **Methods**: take `self` (or `&self`, `&mut self`). Regular methods use `.`, `.clone()` is an example.
-- **Associated functions**: do not take `self`. Associated functions use `::`, `String::from()` and `Vec::new()` are examples.
+- **Methods**: take `self` (or `&self`, `&mut self`). _Regular methods_ use `.`, `.clone()` is an example.
+- **Associated functions**: do not take `self`. _Associated functions_ use `::`, `String::from()` and `Vec::new()` are examples.
 
 ## Struct Example
 
@@ -31,7 +31,7 @@ impl Pokemon {
         }
     }
 
-    // regular methodes
+    // regular methods
 
     fn change_to_pikachu(&mut self) {
         println!("Changing to pikachu...");
@@ -52,6 +52,7 @@ impl Pokemon {
         match self.name {
             Pokemons::Pikachu => println!("It's Pikachu, level {}", self.level),
             Pokemons::Bulbasaur => println!("It's Bulbasaur. level {}", self.level),
+            _ => println!("Unknown pokemon. level {}", self.level),
         }
     }
 }

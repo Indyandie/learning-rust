@@ -42,6 +42,7 @@ impl Pokemon {
         match self.name {
             Pokemons::Pikachu => println!("It's Pikachu, level {}", self.level),
             Pokemons::Bulbasaur => println!("It's Bulbasaur. level {}", self.level),
+            _ => println!("Unknown"),
         }
     }
 }
@@ -62,6 +63,7 @@ impl PokemonType {
 
 fn main() {
     println!("# Methods\n\n## Structs\n");
+
     let mut poke = Pokemon::new();
 
     poke.who_is_that_pokemon();
@@ -74,8 +76,11 @@ fn main() {
     poke.change_to_pikachu();
     poke.who_is_that_pokemon();
 
-    println!("## Enums\n");
+    println!("\n## Enums\n");
+
     let electric = PokemonType::Electric;
-    let grass = PokemonType::Grass
+    let grass = PokemonType::Grass;
+
     electric.check();
+    grass.check();
 }
