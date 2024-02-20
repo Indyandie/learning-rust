@@ -1,10 +1,10 @@
 # Generics
 
-_Generic type_ to support multiple types for a functions, for example `i32`, or `f16`.
+_Generic types_ allow multiple types for a single function variable, for example a function could accept the  `i32`, and `f16` types.
 
 ## Format
 
-_Generic types_ are defined after the function name with angled brackets (`<Generic_Type_Name>`) ussually a single capital letter (`T`, `U`, `V`, etc.), normally `<T>`.
+_Generic types_ are defined after the _function name_ with angled brackets (`<Generic_Type_Name>`) ussually a single capital letter (`T`, `U`, `V`, etc.), commonly `<T>`.
 
 ```rust
 fn gen_type <T> (num: T) -> {
@@ -13,11 +13,11 @@ fn gen_type <T> (num: T) -> {
 }
 ```
 
-## Concrete vs. Generic Type
+## Concrete vs. Generic
 
 ### Concrete Type
 
-Without the angled bracket defintion Rust will inteprate the type as _concrete type_, a single type. 
+Without the angled bracket defintion **Rust** will interpret the the type as a _concrete type_. The function will only accept the specified type. In the example below ONLY the `ExType` type, given it exist.
 
 ```rust
 fn con_type (num: ExType) -> ExType {
@@ -28,6 +28,8 @@ fn con_type (num: ExType) -> ExType {
 
 ### Generic Type
 
+With _generic type_ the function will accept any valid type. In the sample below will accept a `i8`, `String`, `&str`, etc.
+
 ```rust
 fn gen_type <ExTyp> (num: ExType) -> ExType {
 	print!("Concrete type");
@@ -37,7 +39,7 @@ fn gen_type <ExTyp> (num: ExType) -> ExType {
 
 ## Traits
 
-To use `Display`, `Debug`, `Copy` or other _traits_ with a _generic type_ the desired trait must be specified with the _generic type_ definition. 
+To use `Display`, `Debug`, `Copy` or other _trait_ with a _generic type_ the desired _trait_ must be specified with the _generic type_ definition. 
 
 ```rust
 use std::fmt::Debug;
@@ -86,7 +88,7 @@ fn main() {
 
 ### Where
 
-The `where` keyword can be used to define very multiple generic types and complex traits. 
+The `where` keyword can be used to define multiple _generic types_ and complex _trait_ definitions. 
 
 ```rust
 fn where_func <T, U, V, W> (name: T, id: U, msg: V, list: W) 
@@ -103,5 +105,5 @@ fn where_func <T, U, V, W> (name: T, id: U, msg: V, list: W)
 
 ## Rules
 
-- A defined _generic type_ that's used multiple times within the same function in the same call must used the same types. 
-- Different _generic types_ within a function can used the same or different types.
+- A defined _generic type_ that's used multiple times within the same function in the same call must use the same type. 
+- Different _generic types_ within a function can use the same or different types.
