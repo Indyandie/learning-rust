@@ -1,4 +1,5 @@
 use std::any::type_name;
+use std::cmp::PartialOrd;
 use std::fmt::{Debug, Display};
 
 #[derive(Debug)]
@@ -22,6 +23,11 @@ fn get_type<T: Debug>(var: T) -> &'static str {
     name
 }
 
+fn compare_display<T: Display, U: Display + PartialOrd>(msg: T, num1: U, num2: U) {
+    let comparison = num1 > num2;
+    println!("\n\n{msg}\nIs {num1} greater than {num2}? {comparison}");
+}
+
 fn main() {
     let num = gen_type(43);
     get_type(num);
@@ -42,4 +48,15 @@ fn main() {
     debug_item(&gary);
     get_type(gary);
     debug_item(num);
+
+    // ----------------------------------------------------------
+    // Multiple generic types
+
+    compare_display("Yo!", 324, 3);
+    compare_display("Another comparison...", 324, 30000);
+    let msg = "Yet another comparison with defined variables...";
+    let num1: i8 = 10;
+    let num2: i8 = 40;
+
+    compare_display(msg, num1, num2);
 }
