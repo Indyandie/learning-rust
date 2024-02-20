@@ -39,7 +39,7 @@ fn gen_type <ExTyp> (num: ExType) -> ExType {
 
 ## Traits
 
-To use `Display`, `Debug`, `Copy` or other _trait_ with a _generic type_ the desired _trait_ must be specified with the _generic type_ definition. 
+To use `Display`, `Debug`, `Copy` or other _traits_ with a _generic type_ the _traits_ must be specified with the _generic type_ definition. 
 
 ```rust
 use std::fmt::Debug;
@@ -50,7 +50,7 @@ struct Animal {
 	age: i8
 }
 
-fn debug_item <T: Debug> (item: T) {
+fn debug_item<T: Debug>(item: T) {
 	println!("Debug item: {:?}");
 }
 
@@ -61,8 +61,8 @@ fn main() {
 	};
 
 	let num = 45;
-	debug_time(gary);
-	debug_time(num);
+	debug_item(gary);
+	debug_item(num);
 }
 ```
 
