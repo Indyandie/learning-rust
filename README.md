@@ -5,6 +5,7 @@ Let's see how this goes. Start [here](https://play.rust-lang.org/?version=stable
 ## References
 
 - [Rust Book](https://doc.rust-lang.org/book/)
+- [Rust Standard Library](https://doc.rust-lang.org/std/index.html)
 
 ### Easy Rust
 
