@@ -2,7 +2,7 @@
 
 ## Options
 
-The `Option` enum can be used to for values that might not exist, `Some(value)` if the it exist and `None` if it doesn't.
+The `Option` enum can be used to for values that might not exist, `Some(value)` if it exist and `None` if it doesn't.
 
 ### Example
 
@@ -163,11 +163,11 @@ fn main(){
 
 ```rust
 let err_val(vec: Vec<u8>) -> Result<String, FromUtf8Error> {
-  // do somet
+  // do something
 }
 ```
 
-Using a `match` with `Option` or `Result` can wordy. The `.get()` method will return and `Option` for a `Vec`.
+Using a `match` with `Option` or `Result` can be wordy. The `.get()` method will return an `Option` for a `Vec`.
 
 ```rust
 let vec1 = vec![2, 3];
@@ -190,3 +190,46 @@ fn main(){
     }
   }
 }
+```
+
+### `if let`
+
+```rust
+fn main() {
+  let vek = vec![2, 32, 23, 11, 55, 99];
+
+  for idx in 0..10 {
+    if let Some(num) = vek.get(idx) {
+      print!("{num}");
+    }
+  }
+}
+```
+
+> #### Important
+> 
+> `if let Some(val) = some_vec.get(index)` validates as `true` if `some_vec.get(index)` returns an `Option Some(val)`.
+
+
+### `while let`
+
+Validates `true` while the let contain a value.
+
+```rust
+fn main(){
+  let veks = vec![
+    vec![21, 23, 42, 49, 129],
+    vec![1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+  ];
+
+  for mut vk in veks {
+    print!("{}", vk[0]);
+
+    while let Some(info) = vk.pop() {
+      if let Ok(num) = info.parse::<i32> {
+        println!("{num}");
+      }
+    }
+  }
+}
+```
