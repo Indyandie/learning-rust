@@ -63,6 +63,16 @@ fn main() {
     }
 
     println!("\n---\n");
+    println!("\n## get()\n");
+
+    let vec1 = vec![1, 32];
+    let get0 = vec1.get(0);
+    let get1 = vec1.get(1);
+    let get2 = vec1.get(2);
+
+    println!("{get0:?}\n{get1:?}\n{get2:?}");
+
+    println!("\n---\n");
     println!("\n# Result\n");
 
     println!("\n## is_ok\n");
