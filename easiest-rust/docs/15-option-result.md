@@ -100,14 +100,33 @@ for vc in opt_vec {
   if vec_5.is_some() {
     print!("{}", vec_5.unwrap());
   } else {
-    print!("Nothing!")
+    print!("Nothing!");
   }
 }
 ```
 
+### `if let`
+
+```rust
+fn main() {
+  let vek = vec![2, 32, 23, 11, 55, 99];
+
+  for idx in 0..10 {
+    if let Some(num) = vek.get(idx) {
+      print!("{num}");
+    }
+  }
+}
+```
+
+> #### Important
+> 
+> `if let Some(val) = some_vec.get(index)` validates as `true` if `some_vec.get(index)` returns an `Option Some(val)`.
+
+
 ## Result
 
-The `Results` enum is similar to `Option` but instead of the existance of value it test the outcome of a scenario.
+The `Result` enum is similar to `Option` but instead of the existance of value it test the outcome of a scenario.
 
 ```rust
 enum Result<T, E> {
@@ -161,9 +180,10 @@ fn main(){
 
 > `.unwrap` on `Err` will cause a panic
 
+Custom error are commonly used, below is an example from the standard library.
+
 ```rust
-let err_val(vec: Vec<u8>) -> Result<String, FromUtf8Error> {
-  // do something
+pub fn from_utf8(vec: Vec<u8>) -> Result<String, FromUtf8Error> {
 }
 ```
 
@@ -191,25 +211,6 @@ fn main(){
   }
 }
 ```
-
-### `if let`
-
-```rust
-fn main() {
-  let vek = vec![2, 32, 23, 11, 55, 99];
-
-  for idx in 0..10 {
-    if let Some(num) = vek.get(idx) {
-      print!("{num}");
-    }
-  }
-}
-```
-
-> #### Important
-> 
-> `if let Some(val) = some_vec.get(index)` validates as `true` if `some_vec.get(index)` returns an `Option Some(val)`.
-
 
 ### `while let`
 
