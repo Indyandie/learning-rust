@@ -23,6 +23,13 @@ fn even(num: i32) -> Result<(), ()> {
     }
 }
 
+fn check_five(num: i32) -> Result<i32, String> {
+    match num {
+        5 => Ok(num),
+        _ => Err("Not 5.".to_string()),
+    }
+}
+
 fn main() {
     let vec1 = vec![21, 32, 43];
     let vec2 = vec![5, 15, 25, 35, 45, 55];
@@ -62,8 +69,24 @@ fn main() {
 
     let num = 8;
     if even(num).is_ok() {
-        println!("Even!")
+        println!("Even!\n")
     } else {
-        println!("Odd!")
+        println!("Odd!\n")
     }
+
+    let mut vec_res = Vec::new();
+
+    for num in 1..23 {
+        vec_res.push(check_five(num));
+    }
+
+    println!("{vec_res:?}");
+
+    // Test error unwrap panic
+    // let test_err: Result<i32, String> = Err("test".to_string());
+    // let unwrap_err = test_err.unwrap();
+    // println!("{unwrap_err:?}")
+    // thread 'main' panicked at 15-option-result.rs:86:31:
+    // called `Result::unwrap()` on an `Err` value: "test"
+    // note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
 }
