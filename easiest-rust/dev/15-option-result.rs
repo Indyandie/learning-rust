@@ -82,6 +82,17 @@ fn main() {
     }
 
     println!("\n---\n");
+    println!("## if let\n");
+
+    let vec = vec![12, 32, 83, 29, 32, 21];
+
+    for idx in 0..10 {
+        if let Some(num) = vec.get(idx) {
+            println!("{num}");
+        }
+    }
+
+    println!("\n---\n");
     println!("\n# Result\n");
 
     println!("\n## is_ok\n");
@@ -108,4 +119,24 @@ fn main() {
     // thread 'main' panicked at 15-option-result.rs:86:31:
     // called `Result::unwrap()` on an `Err` value: "test"
     // note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+
+    println!("\n---\n");
+    println!("## while let\n");
+
+    let vecs = vec![
+        vec!["Linux", "Arch", "32", "64"],
+        vec!["macOS", "Aqua", "123", "90", "87", "23", "12"],
+    ];
+
+    for mut vec in vecs {
+        println!("{}", vec[0]);
+
+        while let Some(info) = vec.pop() {
+            if let Ok(num) = info.parse::<i32>() {
+                println!("{num}")
+            }
+        }
+
+        println!()
+    }
 }
