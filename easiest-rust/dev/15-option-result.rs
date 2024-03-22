@@ -15,6 +15,14 @@ fn print_opts(opts: Vec<Option<i32>>) {
     }
 }
 
+fn even(num: i32) -> Result<(), ()> {
+    if num % 2 == 0 {
+        Ok(())
+    } else {
+        Err(())
+    }
+}
+
 fn main() {
     let vec1 = vec![21, 32, 43];
     let vec2 = vec![5, 15, 25, 35, 45, 55];
@@ -45,5 +53,17 @@ fn main() {
         } else {
             println!("Nothing!");
         }
+    }
+
+    println!("\n---\n");
+    println!("\n# Result\n");
+
+    println!("\n## is_ok\n");
+
+    let num = 8;
+    if even(num).is_ok() {
+        println!("Even!")
+    } else {
+        println!("Odd!")
     }
 }
