@@ -70,7 +70,16 @@ fn main() {
     let get1 = vec1.get(1);
     let get2 = vec1.get(2);
 
-    println!("{get0:?}\n{get1:?}\n{get2:?}");
+    println!("{get0:?}\n{get1:?}\n{get2:?}\n\n");
+
+    let vec = vec![2, 3, 4, 5, 7, 8, 5];
+
+    for idx in 0..10 {
+        match vec.get(idx) {
+            Some(num) => println!("{num}"),
+            None => println!("Nothing in index {idx}"),
+        }
+    }
 
     println!("\n---\n");
     println!("\n# Result\n");
